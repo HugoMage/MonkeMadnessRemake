@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class OrangutanRenderer extends MobRenderer<Orangutan, OrangutanModel<Orangutan>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation("monkemadness:textures/entity/orangutan.png");
     private static final ResourceLocation FEM = new ResourceLocation("monkemadness:textures/entity/fem_orangutan.png");
+    private static final ResourceLocation BEBE = new ResourceLocation("monkemadness:textures/entity/bebe.png");
     private static final ResourceLocation FEM_ALBINO = new ResourceLocation("monkemadness:textures/entity/albino_fem_orangutan.png");
     private static final ResourceLocation TEXTURE_ALBN = new ResourceLocation("monkemadness:textures/entity/albino_orangutan.png");
 
@@ -21,18 +22,11 @@ public class OrangutanRenderer extends MobRenderer<Orangutan, OrangutanModel<Ora
         super(renderManagerIn, new OrangutanModel<>(renderManagerIn.bakeLayer(OrangutanModel.LAYER_LOCATION)), 0.2F);
         this.shadowRadius = 1.0F;
     }
-    protected void scale(Orangutan entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
-        if(entitylivingbaseIn.isBaby()){
-            matrixStackIn.scale(0.7F, 0.7F, 0.7F);
-        }
-        else{
-            matrixStackIn.scale(1.0F, 1.0F, 1.0F);
-        }
-    }
+
     @Override
     public @NotNull ResourceLocation getTextureLocation(Orangutan entity) {
         if(entity.getVariant() == 1){
-            return TEXTURE;
+            return entity.isBaby() ? BEBE : TEXTURE;
         }
         if(entity.getVariant() == 2) {
             return entity.isBaby() ? TEXTURE_ALBN : FEM_ALBINO;
@@ -40,7 +34,7 @@ public class OrangutanRenderer extends MobRenderer<Orangutan, OrangutanModel<Ora
         if(entity.getVariant() == 3){
             return entity.isBaby() ? FEM_ALBINO : FEM_ALBINO;
         }
-        return entity.isBaby() ? FEM : FEM;
+        return entity.isBaby() ? BEBE : FEM;
     }
 
 }
