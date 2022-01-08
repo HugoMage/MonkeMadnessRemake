@@ -117,6 +117,12 @@ public class OrangutanModel<T extends Orangutan> extends AgeableListModel<T> {
         rightarm.render(matrixStack, buffer, packedLight, packedOverlay);
         leftleg.render(matrixStack, buffer, packedLight, packedOverlay);
         rightleg.render(matrixStack, buffer, packedLight, packedOverlay);
+        bodybaby.render(matrixStack, buffer, packedLight, packedOverlay);
+        headbaby.render(matrixStack, buffer, packedLight, packedOverlay);
+        leftarmbaby.render(matrixStack, buffer, packedLight, packedOverlay);
+        rightarmbaby.render(matrixStack, buffer, packedLight, packedOverlay);
+        leftlegbaby.render(matrixStack, buffer, packedLight, packedOverlay);
+        rightlegbaby.render(matrixStack, buffer, packedLight, packedOverlay);
     }
 
     @Override
