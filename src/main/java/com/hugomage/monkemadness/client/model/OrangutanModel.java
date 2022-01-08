@@ -31,7 +31,6 @@ public class OrangutanModel<T extends Orangutan> extends AgeableListModel<T> {
     private final ModelPart leftleg;
     private final ModelPart rightleg;
     private final ModelPart body;
-
     public OrangutanModel(ModelPart root) {
         this.headbaby = root.getChild("headbaby");
         this.bodybaby = root.getChild("bodybaby");
@@ -46,7 +45,6 @@ public class OrangutanModel<T extends Orangutan> extends AgeableListModel<T> {
         this.rightleg = root.getChild("rightleg");
         this.body = root.getChild("body");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -124,12 +122,10 @@ public class OrangutanModel<T extends Orangutan> extends AgeableListModel<T> {
         leftlegbaby.render(matrixStack, buffer, packedLight, packedOverlay);
         rightlegbaby.render(matrixStack, buffer, packedLight, packedOverlay);
     }
-
     @Override
     protected @NotNull Iterable<ModelPart> headParts() {
         return ImmutableList.of(this.head);
     }
-
     @Override
     protected @NotNull Iterable<ModelPart> bodyParts() {
         return ImmutableList.of(this.body, this.rightarm, this.rightleg, this.leftarm, this.leftleg);

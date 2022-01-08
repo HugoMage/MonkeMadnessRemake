@@ -12,8 +12,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -29,7 +27,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -50,7 +47,7 @@ public class Orangutan extends Animal {
     public int getVariant() { return this.entityData.get(DATA_VARIANT_ID); }
     private void setVariant(int variant) {
         this.entityData.set(DATA_VARIANT_ID, variant); }
-    public boolean isFood(ItemStack stack) {
+    public boolean isFood(@NotNull ItemStack stack) {
         return BREEDITEM.test(stack);
     }
     public static AttributeSupplier.Builder setCustomAttributes(){
@@ -71,14 +68,12 @@ public class Orangutan extends Animal {
             return HoglinBase.hurtAndThrowTarget(this, (LivingEntity)p_70652_1_);
         }
     }
-
     public void aiStep() {
         if (this.attackAnimationRemainingTicks > 0) {
             --this.attackAnimationRemainingTicks;
         }
         super.aiStep();
     }
-
     @OnlyIn(Dist.CLIENT)
     public void handleEntityEvent(byte p_70103_1_) {
         if (p_70103_1_ == 4) {
@@ -88,7 +83,6 @@ public class Orangutan extends Animal {
             super.handleEntityEvent(p_70103_1_);
         }
     }
-
     @Override
     protected void registerGoals() {
         super.registerGoals();
@@ -101,7 +95,6 @@ public class Orangutan extends Animal {
         this.goalSelector.addGoal(6, new TemptGoal(this, 1.1D, BREEDITEM, false));
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1.1D));
     }
-
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(@NotNull ServerLevel serverWorld, @NotNull AgeableMob ageableEntity) {
@@ -110,46 +103,34 @@ public class Orangutan extends Animal {
         orangutan.setVariant(this.getVariant());
         return MMEntitysRegistry.ORANGUTAN.get().create(serverWorld);
     }
-
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_VARIANT_ID, 0);
     }
-
     public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("Variant", this.getVariant());
 
     }
-
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
     public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.setVariant(compound.getInt("Variant"));
 
     }
-
-    protected int getExperienceReward(Player p_70693_1_) {
+    protected int getExperienceReward(@NotNull Player p_70693_1_) {
         if (this.isBaby()) {
             this.xpReward = (int)((float)this.xpReward * 6.5F);
         }
 
         return super.getExperienceReward(p_70693_1_);
     }
-
-
-
     @Nullable
     @Override
     protected SoundEvent getAmbientSound ()
     {
         return MMSoundsRegistry.ORANGUTAN_AMBIENT.get();
     }
-
-
     @Override
     protected void playStepSound(@NotNull BlockPos pos, BlockState blockIn )
     {
@@ -158,17 +139,14 @@ public class Orangutan extends Animal {
             this.playSound( SoundEvents.COW_STEP, this.getSoundVolume() * 0.3F, this.getSoundVolume() );
         }
     }
-
     @Nullable
     @Override
     protected SoundEvent  getHurtSound (@NotNull DamageSource damageSource ) {
         return MMSoundsRegistry.ORANGUTAN_HURT.get();
     }
-
     @Nullable
     @Override
     protected SoundEvent getDeathSound () { return MMSoundsRegistry.ORANGUTAN_DEATH.get(); }
-
     public void baseTick() {
         super.baseTick();
         this.level.getProfiler().push("mobBaseTick");
@@ -183,7 +161,7 @@ public class Orangutan extends Animal {
         return new ItemStack(MMItemsRegistry.ORANGUTAN_SPAWN_EGG.get());
     }
     @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         if(this.random.nextInt(2) == 0){
             this.setVariant(1);
         }else if(random.nextInt(50) == 0){
@@ -193,5 +171,4 @@ public class Orangutan extends Animal {
         }
         return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
     }
-
 }

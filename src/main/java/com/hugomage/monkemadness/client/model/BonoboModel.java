@@ -27,7 +27,6 @@ public class BonoboModel<T extends Bonobo> extends AgeableListModel<T> {
     private final ModelPart leftarm;
     private final ModelPart rightarm;
     private final ModelPart head;
-
     public BonoboModel(ModelPart p_170566_) {
         super(true, 8.0F, 3.35F);
         this.leftleg = p_170566_.getChild("leftleg");
@@ -37,7 +36,6 @@ public class BonoboModel<T extends Bonobo> extends AgeableListModel<T> {
         this.rightarm = p_170566_.getChild("rightarm");
         this.head = p_170566_.getChild("head");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -58,10 +56,8 @@ public class BonoboModel<T extends Bonobo> extends AgeableListModel<T> {
                 .texOffs(0, 0).addBox(-4.0F, -4.0F, -2.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(17, 0).addBox(3.0F, -4.0F, -2.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(17, 13).addBox(-3.0F, -5.0F, -4.0F, 6.0F, 6.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 11.0F, -2.0F));
-
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
     @Override
     public void setupAnim(Bonobo entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.head.xRot = headPitch * ((float)Math.PI / 180F);
@@ -70,7 +66,6 @@ public class BonoboModel<T extends Bonobo> extends AgeableListModel<T> {
         this.leftleg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         this.rightarm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         this.leftarm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
-
     }
     @Override
     public void renderToBuffer(PoseStack matrixStackIn, VertexConsumer bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
@@ -81,15 +76,12 @@ public class BonoboModel<T extends Bonobo> extends AgeableListModel<T> {
         leftarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
         rightarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
-
     @Override
     protected @NotNull Iterable<ModelPart> headParts() {
         return ImmutableList.of(this.head);
     }
-
     @Override
     protected @NotNull Iterable<ModelPart> bodyParts() {
         return ImmutableList.of(this.body, this.rightarm, this.rightleg, this.leftarm, this.leftleg);
     }
-
 }

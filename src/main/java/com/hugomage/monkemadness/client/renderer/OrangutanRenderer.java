@@ -17,12 +17,10 @@ public class OrangutanRenderer extends MobRenderer<Orangutan, OrangutanModel<Ora
     private static final ResourceLocation BEBE = new ResourceLocation("monkemadness:textures/entity/bebe.png");
     private static final ResourceLocation FEM_ALBINO = new ResourceLocation("monkemadness:textures/entity/albino_fem_orangutan.png");
     private static final ResourceLocation TEXTURE_ALBN = new ResourceLocation("monkemadness:textures/entity/albino_orangutan.png");
-
     public OrangutanRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new OrangutanModel<>(renderManagerIn.bakeLayer(OrangutanModel.LAYER_LOCATION)), 0.2F);
         this.shadowRadius = 1.0F;
     }
-
     @Override
     public @NotNull ResourceLocation getTextureLocation(Orangutan entity) {
         if(entity.getVariant() == 1){
@@ -36,5 +34,4 @@ public class OrangutanRenderer extends MobRenderer<Orangutan, OrangutanModel<Ora
         }
         return entity.isBaby() ? BEBE : FEM;
     }
-
 }
