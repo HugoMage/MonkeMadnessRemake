@@ -1,0 +1,171 @@
+{
+  "entity.orangutan.ambient": {
+    "category": "entity",
+    "subtitle": "entity.orangutan.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/orangutan/entity.orangutan.ambient",
+        "stream": true
+      }
+    ]
+  },
+  "entity.orangutan.hurt": {
+    "category": "entity",
+    "subtitle": "entity.orangutan.hurt",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/orangutan/entity.orangutan.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.orangutan.death": {
+    "category": "entity",
+    "subtitle": "entity.orangutan.death",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/orangutan/entity.orangutan.death",
+        "stream": true
+      }
+    ]
+  },
+  "entity.proboscis.ambient": {
+    "category": "entity",
+    "subtitle": "entity.proboscis.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/proboscis/entity.proboscis.ambient",
+        "stream": true
+      }
+    ]
+  },
+  "entity.proboscis.hurt": {
+    "category": "entity",
+    "subtitle": "entity.proboscis.hurt",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/proboscis/entity.proboscis.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.proboscis.death": {
+    "category": "entity",
+    "subtitle": "entity.proboscis.death",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/proboscis/entity.proboscis.death",
+        "stream": true
+      }
+    ]
+  },
+  "entity.uakari.ambient": {
+    "category": "entity",
+    "subtitle": "entity.uakari.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/uakari/entity.uakari.ambient",
+        "stream": true
+      }
+    ]
+  },
+  "entity.uakari.hurt": {
+    "category": "entity",
+    "subtitle": "entity.uakari.hurt",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/uakari/entity.uakari.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.uakari.death": {
+    "category": "entity",
+    "subtitle": "entity.uakari.death",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/uakari/entity.uakari.death",
+        "stream": true
+      }
+    ]
+  },
+  "entity.zombieape.ambient": {
+    "category": "entity",
+    "subtitle": "entity.zombieape.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/zombieape/entity.zombieape.ambient",
+        "stream": true
+      }
+    ]
+  },
+  "entity.zombieape.hurt": {
+    "category": "entity",
+    "subtitle": "entity.zombieape.hurt",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/zombieape/entity.zombieape.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.zombieape.death": {
+    "category": "entity",
+    "subtitle": "entity.zombieape.death",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/zombieape/entity.zombieape.death",
+        "stream": true
+      }
+    ]
+  },
+  "music.disc.bamboo": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "monkemadness:music/disc/bamboo",
+        "stream": true
+      }
+    ]
+  },
+  "entity.rhesus.ambient": {
+    "category": "entity",
+    "subtitle": "entity.rhesus.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/rhesus/entity.rhesus.ambient",
+        "stream": true
+      }
+    ]
+  },
+  "entity.rhesus.hurt": {
+    "category": "entity",
+    "subtitle": "entity.rhesus.hurt",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/rhesus/entity.rhesus.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.rhesus.death": {
+    "category": "entity",
+    "subtitle": "entity.rhesus.death",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/rhesus/entity.rhesus.death",
+        "stream": true
+      }
+    ]
+  },
+  "entity.mandrill.ambient": {
+    "category": "entity",
+    "subtitle": "entity.mandrill.ambient",
+    "sounds": [
+      {
+        "name": "monkemadness:entity/mandrill/entity.mandrill.ambient",
+        "stream": true
+      }
+    ]
+  }
+}
