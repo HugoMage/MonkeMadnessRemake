@@ -1,5 +1,6 @@
 package com.hugomage.monkemadness.items.tools;
 
+import com.hugomage.monkemadness.client.PanFluteRenderProperties;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,17 +20,19 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.client.IItemRenderProperties;
 
 import java.util.Random;
+import java.util.function.Consumer;
 
-public class MotivatorPickaxe extends Item {
-    public MotivatorPickaxe() {
+public class PanFlute extends Item {
+    public PanFlute() {
         super(new Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1));
     }
     public InteractionResultHolder<ItemStack> use(Level p_43405_, Player p_43406_, InteractionHand p_43407_) {
         ItemStack stack = p_43406_.getItemInHand(p_43407_);
         addParticleEffect(ParticleTypes.NOTE, p_43405_, p_43406_.getX() - 0.5, p_43406_.getY() + 1, p_43406_.getZ() - 0.5);
-        p_43406_.playSound(MMSoundsRegistry.ORANGUTAN_AMBIENT.get(), 0.4f, 1);
+        p_43406_.playSound(MMSoundsRegistry.PAN_FLUTE_WHISTLE.get(), 0.4f, 1);
         return InteractionResultHolder.pass(stack);
     }
     private void addParticleEffect(SimpleParticleType particleData, Level world, double x, double y, double z) {
@@ -43,5 +46,10 @@ public class MotivatorPickaxe extends Item {
             double d8 = z + random.nextDouble();
             world.addParticle(particleData, d6, d7, d8, d2, d3, d4);
         }
+    }
+    @Override
+    public void initializeClient(Consumer<IItemRenderProperties> consumer) {
+        consumer.accept(PanFluteRenderProperties.RENDER_PROPERTIES);
+
     }
 }

@@ -19,4 +19,10 @@ public class MMSoundsRegistry {
     public static final RegistryObject<SoundEvent> ORANGUTAN_DEATH = SOUND_EVENTS.register("entity.orangutan.death", () ->
             new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.orangutan.death"))
     );
+    public static final RegistryObject<SoundEvent> DISC_BAMBOO = SOUND_EVENTS.register("music.disc.bamboo", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "music.disc.bamboo"))
+    );
+    public static final RegistryObject<SoundEvent> PAN_FLUTE_WHISTLE = SOUND_EVENTS.register("misc.pan_flute.whistle", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "misc.pan_flute.whistle"))
+    );
 }
