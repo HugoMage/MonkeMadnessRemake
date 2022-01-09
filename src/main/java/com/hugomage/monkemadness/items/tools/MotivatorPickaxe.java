@@ -34,7 +34,7 @@ public class MotivatorPickaxe extends Item {
     }
     private void addParticleEffect(SimpleParticleType particleData, Level world, double x, double y, double z) {
         Random random = new Random();
-        for(int i = 0; i < 10; ++i) {
+        for(int i = 0; i < 1; ++i) {
             double d2 = random.nextGaussian() * 0.02D;
             double d3 = random.nextGaussian() * 0.02D;
             double d4 = random.nextGaussian() * 0.02D;

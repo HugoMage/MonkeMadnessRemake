@@ -30,7 +30,7 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> ORANGUTAN_SPAWN_EGG = ITEMS.register("orangutan_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.ORANGUTAN, 0xa06146, 0x776350, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> BONOBO_SPAWN_EGG = ITEMS.register("bonobo_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.BONOBO, 0x1a1b1e, 0x4d4e55, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     //Holdables
-    public static final RegistryObject<Item> MONKEY_MOTIVATOR = ITEMS.register("monkey_motivator", MotivatorPickaxe::new);
+    public static final RegistryObject<Item> MONKEY_MOTIVATOR = ITEMS.register("pan_flute", MotivatorPickaxe::new);
 
 
 }
