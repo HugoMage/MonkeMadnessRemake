@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "monkemadness:items/music_disc_bamboo"
+    "layer0": "monkemadness:item/music_disc_bamboo"
   }
 }
