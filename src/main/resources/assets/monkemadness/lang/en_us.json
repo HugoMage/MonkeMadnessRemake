@@ -7,7 +7,12 @@
   "item.monkemadness.spoiled_primate_brain": "Spoiled Primate Brain",
   "entity.monkemadness.orangutan": "Orangutan",
   "item.monkemadness.orangutan_spawn_egg": "Orangutan Spawn Egg",
-  "entity.monkemadness.bonobo": "Bonobo",
-  "item.monkemadness.bonobo_spawn_egg": "Bonobo Spawn Egg",
-  "item.monkemadness.pan_flute": "Pan Flute"
+  "entity.monkemadness.snub_nosed_monkey": "Snub Nosed Monkey",
+  "item.monkemadness.snub_nosed_monkey_spawn_egg": "Snub Nosed Monkey Spawn Egg",
+  "item.monkemadness.pan_flute": "Pan Flute",
+  "item.monkemadness.golden_banana": "Golden Banana",
+  "item.monke_madness.music_disc_bamboo": "Music Disc",
+  "item.monke_madness.music_disc_bamboo.desc": "Pyrocide - Bamboo",
+  "entity.monkemadness.tarsier": "Tarsier",
+  "item.monkemadness.tarsier_spawn_egg": "Tarsier Spawn Egg"
 }

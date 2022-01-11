@@ -1,17 +1,18 @@
 package com.hugomage.monkemadness;
-
-import com.hugomage.monkemadness.client.model.BonoboModel;
 import com.hugomage.monkemadness.client.model.OrangutanModel;
-import com.hugomage.monkemadness.client.renderer.BonoboRenderer;
+import com.hugomage.monkemadness.client.model.SnubNosedMonkeyModel;
+import com.hugomage.monkemadness.client.model.TarsierModel;
+import com.hugomage.monkemadness.client.renderer.GoldenSnubNosedMonkeyRenderer;
 import com.hugomage.monkemadness.client.renderer.OrangutanRenderer;
-import com.hugomage.monkemadness.entities.Bonobo;
+import com.hugomage.monkemadness.client.renderer.TarsierRenderer;
 import com.hugomage.monkemadness.entities.Orangutan;
+import com.hugomage.monkemadness.entities.SnubNosedMonkey;
+import com.hugomage.monkemadness.entities.Tarsier;
 import com.hugomage.monkemadness.registry.MMEntitysRegistry;
 import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,10 +27,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.stream.Collectors;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("monkemadness")
 public class MonkeMadness
 {
@@ -54,21 +53,24 @@ public class MonkeMadness
     }
     private void registerCommon(FMLCommonSetupEvent event) {
         SpawnPlacements.register(MMEntitysRegistry.ORANGUTAN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
-        SpawnPlacements.register(MMEntitysRegistry.BONOBO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+
     }
     @SubscribeEvent
     public void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers  event) {
         event.registerEntityRenderer(MMEntitysRegistry.ORANGUTAN.get(), OrangutanRenderer::new);
-        event.registerEntityRenderer(MMEntitysRegistry.BONOBO.get(), BonoboRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), GoldenSnubNosedMonkeyRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.TARSIER.get(), TarsierRenderer::new);
     }
     public void registerLayerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(OrangutanModel.LAYER_LOCATION, OrangutanModel::createBodyLayer);
-        event.registerLayerDefinition(BonoboModel.LAYER_LOCATION, BonoboModel::createBodyLayer);
+        event.registerLayerDefinition(SnubNosedMonkeyModel.LAYER_LOCATION, SnubNosedMonkeyModel::createBodyLayer);
+        event.registerLayerDefinition(TarsierModel.LAYER_LOCATION, TarsierModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
         event.put(MMEntitysRegistry.ORANGUTAN.get(), Orangutan.setCustomAttributes().build());
-        event.put(MMEntitysRegistry.BONOBO.get(), Bonobo.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), SnubNosedMonkey.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.TARSIER.get(), Tarsier.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
