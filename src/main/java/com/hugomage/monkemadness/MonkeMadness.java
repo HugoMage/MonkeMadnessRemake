@@ -5,12 +5,15 @@ import com.hugomage.monkemadness.client.model.TarsierModel;
 import com.hugomage.monkemadness.client.renderer.GoldenSnubNosedMonkeyRenderer;
 import com.hugomage.monkemadness.client.renderer.OrangutanRenderer;
 import com.hugomage.monkemadness.client.renderer.TarsierRenderer;
+import com.hugomage.monkemadness.client.renderer.layer.TarsierOnShoulderLayer;
 import com.hugomage.monkemadness.entities.Orangutan;
 import com.hugomage.monkemadness.entities.SnubNosedMonkey;
 import com.hugomage.monkemadness.entities.Tarsier;
 import com.hugomage.monkemadness.registry.MMEntitysRegistry;
 import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -60,6 +63,14 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.ORANGUTAN.get(), OrangutanRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), GoldenSnubNosedMonkeyRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.TARSIER.get(), TarsierRenderer::new);
+
+        var managerDefault = (PlayerRenderer)Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
+        var managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
+
+        if (managerDefault != null && managerSlim != null) {
+            managerDefault.addLayer(new TarsierOnShoulderLayer<>(managerDefault));
+            managerSlim.addLayer(new TarsierOnShoulderLayer<>(managerSlim));
+        }
     }
     public void registerLayerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(OrangutanModel.LAYER_LOCATION, OrangutanModel::createBodyLayer);

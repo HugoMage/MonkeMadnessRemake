@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public class TarsierRenderer extends MobRenderer<Tarsier, TarsierModel<Tarsier>> {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(new ResourceLocation(MonkeMadness.MOD_ID, "primate"), "main");
-    private static final ResourceLocation TEXTURE = new ResourceLocation("monkemadness:textures/entity/tarsier.png");
-    private static final ResourceLocation ALBINO = new ResourceLocation("monkemadness:textures/entity/albino_tarsier.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation("monkemadness:textures/entity/tarsier.png");
+    public static final ResourceLocation ALBINO = new ResourceLocation("monkemadness:textures/entity/albino_tarsier.png");
 
 
     public TarsierRenderer(EntityRendererProvider.Context renderManagerIn) {

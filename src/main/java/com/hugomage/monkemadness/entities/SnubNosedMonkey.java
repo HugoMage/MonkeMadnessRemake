@@ -24,7 +24,6 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.hoglin.HoglinBase;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -35,14 +34,11 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CaveVines;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -73,15 +69,12 @@ public class SnubNosedMonkey extends Animal {
         this.entityData.set(DATA_VARIANT_ID, variant); }
     public static AttributeSupplier.Builder setCustomAttributes(){
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 40.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.30D)
-                .add(Attributes.ATTACK_DAMAGE, 6D)
-                .add(Attributes.ATTACK_SPEED, 4D)
-                .add(Attributes.ATTACK_KNOCKBACK, 1D);
+                .add(Attributes.MAX_HEALTH, 15.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.40D);
     }
     @Override
-    public boolean isInvulnerableTo(DamageSource p_20122_) {
-        return this.isRemoved() || this.invulnerable && p_20122_ != DamageSource.SWEET_BERRY_BUSH && !p_20122_.isCreativePlayer();
+    public boolean isInvulnerableTo(@NotNull DamageSource p_20122_) {
+        return this.invulnerable && p_20122_ != DamageSource.SWEET_BERRY_BUSH && !p_20122_.isCreativePlayer();
     }
     @Override
     protected void registerGoals() {
@@ -96,6 +89,15 @@ public class SnubNosedMonkey extends Animal {
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(7, new SnubNosedMonkey.FindItemsGoal());
         this.goalSelector.addGoal(10, new SnubNosedMonkey.EatFoodGoal(1.2F, 12, 2));
+    }
+    public boolean hurt(DamageSource p_70097_1_, float p_70097_2_) {
+        if (this.isInvulnerableTo(p_70097_1_)) {
+            return true;
+        }
+
+
+        return super.hurt(p_70097_1_, p_70097_2_);
+
     }
     @Override
     public InteractionResult mobInteract(Player p_230254_1_, InteractionHand p_230254_2_) {
@@ -209,7 +211,7 @@ public class SnubNosedMonkey extends Animal {
         public void start() {
             List<ItemEntity> list = SnubNosedMonkey.this.level.getEntitiesOfClass(ItemEntity.class, SnubNosedMonkey.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), SnubNosedMonkey.TRUSTED_TARGET_SELECTOR);
             if (!list.isEmpty()) {
-                SnubNosedMonkey.this.getNavigation().moveTo(list.get(0), (double)1.2F);
+                SnubNosedMonkey.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
 
         }

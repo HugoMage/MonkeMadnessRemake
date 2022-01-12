@@ -1,6 +1,5 @@
 package com.hugomage.monkemadness.entities;
 
-import com.hugomage.monkemadness.registry.MMEntitysRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
@@ -33,10 +32,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CaveVines;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
@@ -48,9 +44,7 @@ import java.util.function.Predicate;
 
 public class Tarsier extends ShoulderRidingEntity {
     private int ticksSinceEaten;
-    private static final Predicate<ItemEntity> TRUSTED_TARGET_SELECTOR = (p_213489_0_) -> {
-        return !p_213489_0_.hasPickUpDelay() && p_213489_0_.isAlive();
-    };
+    private static final Predicate<ItemEntity> TRUSTED_TARGET_SELECTOR = (p_213489_0_) -> !p_213489_0_.hasPickUpDelay() && p_213489_0_.isAlive();
     public static final Ingredient BREEDITEM = Ingredient.of(Items.SUGAR_CANE, Items.MELON_SLICE, Items.HONEYCOMB, Items.GLOW_BERRIES);
     public Tarsier(EntityType<? extends ShoulderRidingEntity> type, Level worldIn) {
         super(type, worldIn);
@@ -236,9 +230,7 @@ public class Tarsier extends ShoulderRidingEntity {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageableEntity) {
-        Tarsier orangutan = MMEntitysRegistry.TARSIER.get().create(serverWorld);
-        orangutan.setVariant(this.getVariant());
-        return orangutan;
+       return null;
     }
     @Override
     protected void defineSynchedData() {
@@ -354,7 +346,7 @@ public class Tarsier extends ShoulderRidingEntity {
         public void start() {
             List<ItemEntity> list = Tarsier.this.level.getEntitiesOfClass(ItemEntity.class, Tarsier.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), Tarsier.TRUSTED_TARGET_SELECTOR);
             if (!list.isEmpty()) {
-                Tarsier.this.getNavigation().moveTo(list.get(0), (double)1.2F);
+                Tarsier.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
 
         }
