@@ -15,7 +15,7 @@ public class GoldenSnubNosedMonkeyRenderer extends MobRenderer<SnubNosedMonkey, 
     private static final ResourceLocation SILVER = new ResourceLocation("monkemadness:textures/entity/snub_nosed_monkey.png");
     public GoldenSnubNosedMonkeyRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new SnubNosedMonkeyModel<>(renderManagerIn.bakeLayer(SnubNosedMonkeyModel.LAYER_LOCATION)), 0.2F);
-        this.shadowRadius = 0.2F;
+        this.shadowRadius = 0.5F;
         this.addLayer(new SnubNosedMonkeyHeldItemLayer(this));
     }
 

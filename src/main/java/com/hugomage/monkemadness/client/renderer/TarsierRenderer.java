@@ -17,7 +17,7 @@ public class TarsierRenderer extends MobRenderer<Tarsier, TarsierModel<Tarsier>>
 
     public TarsierRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new TarsierModel<>(renderManagerIn.bakeLayer(TarsierModel.LAYER_LOCATION)), 0.2F);
-        this.shadowRadius = 0.2F;
+        this.shadowRadius = 0.3F;
         this.addLayer(new TarsierEyes<>(this));
     }
 

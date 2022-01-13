@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "monkemadness:item/bale_monkey_mustache"
+  }
+}

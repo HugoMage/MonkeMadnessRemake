@@ -1,14 +1,8 @@
 package com.hugomage.monkemadness;
-import com.hugomage.monkemadness.client.model.OrangutanModel;
-import com.hugomage.monkemadness.client.model.SnubNosedMonkeyModel;
-import com.hugomage.monkemadness.client.model.TarsierModel;
-import com.hugomage.monkemadness.client.renderer.GoldenSnubNosedMonkeyRenderer;
-import com.hugomage.monkemadness.client.renderer.OrangutanRenderer;
-import com.hugomage.monkemadness.client.renderer.TarsierRenderer;
+import com.hugomage.monkemadness.client.model.*;
+import com.hugomage.monkemadness.client.renderer.*;
 import com.hugomage.monkemadness.client.renderer.layer.TarsierOnShoulderLayer;
-import com.hugomage.monkemadness.entities.Orangutan;
-import com.hugomage.monkemadness.entities.SnubNosedMonkey;
-import com.hugomage.monkemadness.entities.Tarsier;
+import com.hugomage.monkemadness.entities.*;
 import com.hugomage.monkemadness.registry.MMEntitysRegistry;
 import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
@@ -63,9 +57,10 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.ORANGUTAN.get(), OrangutanRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), GoldenSnubNosedMonkeyRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.TARSIER.get(), TarsierRenderer::new);
-
-        var managerDefault = (PlayerRenderer)Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
-        var managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
+        event.registerEntityRenderer(MMEntitysRegistry.ZOMBIEAPE.get(), ZombieApeRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.BALE.get(), BaleMonkeyRenderer::new);
+        PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
+        PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
 
         if (managerDefault != null && managerSlim != null) {
             managerDefault.addLayer(new TarsierOnShoulderLayer<>(managerDefault));
@@ -76,17 +71,21 @@ public class MonkeMadness
         event.registerLayerDefinition(OrangutanModel.LAYER_LOCATION, OrangutanModel::createBodyLayer);
         event.registerLayerDefinition(SnubNosedMonkeyModel.LAYER_LOCATION, SnubNosedMonkeyModel::createBodyLayer);
         event.registerLayerDefinition(TarsierModel.LAYER_LOCATION, TarsierModel::createBodyLayer);
+        event.registerLayerDefinition(ZombieApeModel.LAYER_LOCATION, ZombieApeModel::createBodyLayer);
+        event.registerLayerDefinition(BaleMonkeyModel.LAYER_LOCATION, BaleMonkeyModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
         event.put(MMEntitysRegistry.ORANGUTAN.get(), Orangutan.setCustomAttributes().build());
         event.put(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), SnubNosedMonkey.setCustomAttributes().build());
         event.put(MMEntitysRegistry.TARSIER.get(), Tarsier.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.ZOMBIEAPE.get(), ZombieApe.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.BALE.get(), BaleMonkey.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
-        // some example code to dispatch IMC to another mod
+        // some example code  to dispatch IMC to another mod
         InterModComms.sendTo("data", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
 

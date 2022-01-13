@@ -1,9 +1,7 @@
 package com.hugomage.monkemadness.registry;
 
 import com.hugomage.monkemadness.MonkeMadness;
-import com.hugomage.monkemadness.entities.Orangutan;
-import com.hugomage.monkemadness.entities.SnubNosedMonkey;
-import com.hugomage.monkemadness.entities.Tarsier;
+import com.hugomage.monkemadness.entities.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -27,4 +25,13 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(Tarsier::new, MobCategory.CREATURE)
                     .sized(0.8f,0.6f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "tarsier").toString()));
+    public static final RegistryObject<EntityType<ZombieApe>> ZOMBIEAPE = ENTITY_TYPES.register("zombie_ape", ()->
+            EntityType.Builder.of(ZombieApe::new, MobCategory.MONSTER)
+                    .sized(1.0f,1.3f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "zombie_ape").toString()));
+    public static final RegistryObject<EntityType<BaleMonkey>> BALE = ENTITY_TYPES.register("bale_monkey", ()->
+            EntityType.Builder.of(BaleMonkey::new, MobCategory.CREATURE)
+                    .sized(1.0f, 1.0f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "bale_monkey").toString()));
+
 }

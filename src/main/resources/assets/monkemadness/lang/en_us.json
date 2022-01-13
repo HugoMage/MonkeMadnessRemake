@@ -14,5 +14,10 @@
   "item.monke_madness.music_disc_bamboo": "Music Disc",
   "item.monke_madness.music_disc_bamboo.desc": "Pyrocide - Bamboo",
   "entity.monkemadness.tarsier": "Tarsier",
-  "item.monkemadness.tarsier_spawn_egg": "Tarsier Spawn Egg"
+  "item.monkemadness.tarsier_spawn_egg": "Tarsier Spawn Egg",
+  "entity.monkemadness.zombie_ape": "Zombie Ape",
+  "item.monkemadness.zombie_ape_spawn_egg": "Zombie Ape Spawn Egg",
+  "entity.monkemadness.bale_monkey": "Bale Monkey",
+  "item.monkemadness.bale_monkey_spawn_egg": "Bale Monkey Spawn Egg",
+  "item.monkemadness.bale_monkey_mustache": "Bale Monkey Mustache"
 }

@@ -89,32 +89,32 @@
       }
     ]
   },
-  "entity.zombieape.ambient": {
+  "entity.zombie_ape.ambient": {
     "category": "entity",
-    "subtitle": "entity.zombieape.ambient",
+    "subtitle": "entity.zombie_ape.ambient",
     "sounds": [
       {
-        "name": "monkemadness:entity/zombieape/entity.zombieape.ambient",
+        "name": "monkemadness:entity/zombie_ape/entity.zombie_ape.ambient",
         "stream": true
       }
     ]
   },
-  "entity.zombieape.hurt": {
+  "entity.zombie_ape.hurt": {
     "category": "entity",
-    "subtitle": "entity.zombieape.hurt",
+    "subtitle": "entity.zombie_ape.hurt",
     "sounds": [
       {
-        "name": "monkemadness:entity/zombieape/entity.zombieape.hurt",
+        "name": "monkemadness:entity/zombie_ape/entity.zombie_ape.hurt",
         "stream": true
       }
     ]
   },
-  "entity.zombieape.death": {
+  "entity.zombie_ape.death": {
     "category": "entity",
-    "subtitle": "entity.zombieape.death",
+    "subtitle": "entity.zombie_ape.death",
     "sounds": [
       {
-        "name": "monkemadness:entity/zombieape/entity.zombieape.death",
+        "name": "monkemadness:entity/zombie_ape/entity.zombie_ape.death",
         "stream": true
       }
     ]

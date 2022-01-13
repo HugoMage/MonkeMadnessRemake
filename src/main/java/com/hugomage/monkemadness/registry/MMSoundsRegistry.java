@@ -25,4 +25,13 @@ public class MMSoundsRegistry {
     public static final RegistryObject<SoundEvent> PAN_FLUTE_WHISTLE = SOUND_EVENTS.register("misc.pan_flute.whistle", () ->
             new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "misc.pan_flute.whistle"))
     );
+    public static final RegistryObject<SoundEvent> ZOMBIEAPE_AMBIENT = SOUND_EVENTS.register("entity.zombie_ape.ambient", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.zombie_ape.ambient"))
+    );
+    public static final RegistryObject<SoundEvent> ZOMBIEAPE_HURT = SOUND_EVENTS.register("entity.zombie_ape.hurt", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.zombie_ape.hurt"))
+    );
+    public static final RegistryObject<SoundEvent> ZOMBIEAPE_DEATH = SOUND_EVENTS.register("entity.zombie_ape.death", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.zombie_ape.death"))
+    );
 }
