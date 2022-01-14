@@ -51,6 +51,7 @@ public class SnubNosedMonkey extends Animal {
     public static final Ingredient BREEDITEM = Ingredient.of(Items.SWEET_BERRIES, Items.MELON_SLICE, Items.HONEYCOMB, Items.BAMBOO);
     private int ticksSinceEaten;
     private boolean invulnerable;
+    public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     private static final Predicate<ItemEntity> TRUSTED_TARGET_SELECTOR = (p_213489_0_) -> { return !p_213489_0_.hasPickUpDelay() && p_213489_0_.isAlive(); };
     public SnubNosedMonkey(EntityType<? extends Animal> type, Level worldIn) {
         super(type, worldIn);
@@ -217,7 +218,11 @@ public class SnubNosedMonkey extends Animal {
         }
     }
     public void aiStep() {
-
+        if (!this.level.isClientSide && this.isAlive() && --this.timeUntilNextPoop <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(MMItemsRegistry.POOP.get());
+            this.timeUntilNextPoop = this.random.nextInt(6000) + 6000;
+        }
         if (!this.level.isClientSide && this.isAlive() && this.isEffectiveAi()) {
             ++this.ticksSinceEaten;
             ItemStack itemstack = this.getItemBySlot(EquipmentSlot.MAINHAND);

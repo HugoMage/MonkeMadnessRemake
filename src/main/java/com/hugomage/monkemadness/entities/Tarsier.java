@@ -1,5 +1,6 @@
 package com.hugomage.monkemadness.entities;
 
+import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
@@ -44,6 +45,7 @@ import java.util.function.Predicate;
 
 public class Tarsier extends ShoulderRidingEntity {
     private int ticksSinceEaten;
+    public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     private static final Predicate<ItemEntity> TRUSTED_TARGET_SELECTOR = (p_213489_0_) -> !p_213489_0_.hasPickUpDelay() && p_213489_0_.isAlive();
     public static final Ingredient BREEDITEM = Ingredient.of(Items.SUGAR_CANE, Items.MELON_SLICE, Items.HONEYCOMB, Items.GLOW_BERRIES);
     public Tarsier(EntityType<? extends ShoulderRidingEntity> type, Level worldIn) {
@@ -112,7 +114,11 @@ public class Tarsier extends ShoulderRidingEntity {
         return super.getExperienceReward(p_70693_1_);
     }
     public void aiStep() {
-
+        if (!this.level.isClientSide && this.isAlive() && --this.timeUntilNextPoop <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(MMItemsRegistry.POOP.get());
+            this.timeUntilNextPoop = this.random.nextInt(6000) + 6000;
+        }
         if (!this.level.isClientSide && this.isAlive() && this.isEffectiveAi()) {
             ++this.ticksSinceEaten;
             ItemStack itemstack = this.getItemBySlot(EquipmentSlot.MAINHAND);
@@ -205,12 +211,6 @@ public class Tarsier extends ShoulderRidingEntity {
             return super.mobInteract(p_230254_1_, p_230254_2_);
         }
     }
-    public boolean isBreedingItem(ItemStack stack) {
-        Item item = stack.getItem();
-        return item.isEdible() && item.getFoodProperties().isMeat();
-    }
-
-
     public int getVariant() {
         return this.entityData.get(DATA_VARIANT_ID);
     }

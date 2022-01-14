@@ -7,6 +7,7 @@ import com.hugomage.monkemadness.registry.MMEntitysRegistry;
 import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
@@ -59,6 +60,7 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.TARSIER.get(), TarsierRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.ZOMBIEAPE.get(), ZombieApeRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.BALE.get(), BaleMonkeyRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
 

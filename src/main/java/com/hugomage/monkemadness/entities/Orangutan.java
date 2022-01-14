@@ -41,12 +41,12 @@ public class Orangutan extends Animal {
         super(type, worldIn);
     }
     public int attackAnimationRemainingTicks;
+    public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     public int getAttackAnimationRemainingTicks() {
         return this.attackAnimationRemainingTicks;
     }
     public int getVariant() { return this.entityData.get(DATA_VARIANT_ID); }
-    private void setVariant(int variant) {
-        this.entityData.set(DATA_VARIANT_ID, variant); }
+    private void setVariant(int variant) { this.entityData.set(DATA_VARIANT_ID, variant); }
     public boolean isFood(@NotNull ItemStack stack) {
         return BREEDITEM.test(stack);
     }
@@ -71,6 +71,11 @@ public class Orangutan extends Animal {
     public void aiStep() {
         if (this.attackAnimationRemainingTicks > 0) {
             --this.attackAnimationRemainingTicks;
+        }
+        if (!this.level.isClientSide && this.isAlive() && --this.timeUntilNextPoop <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(MMItemsRegistry.POOP.get());
+            this.timeUntilNextPoop = this.random.nextInt(6000) + 6000;
         }
         super.aiStep();
     }

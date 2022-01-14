@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
 public class BaleMonkey extends Animal {
     private static final EntityDataAccessor<Boolean> SHEARED = SynchedEntityData.defineId(BaleMonkey.class, EntityDataSerializers.BOOLEAN);
     public static final Ingredient TEMPTATION_ITEMS = Ingredient.of(Items.HONEYCOMB);
+    public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     public boolean isSheared() { return this.entityData.get(SHEARED); }
     public void setSheared(boolean sheared) { this.entityData.set(SHEARED, sheared); }
     public BaleMonkey(EntityType<? extends Animal> type, Level worldIn) {
@@ -50,7 +51,14 @@ public class BaleMonkey extends Animal {
                 .add(Attributes.ATTACK_SPEED, 6D)
                 .add(Attributes.ATTACK_KNOCKBACK, 1D);
     }
-
+    public void aiStep() {
+        if (!this.level.isClientSide && this.isAlive() && --this.timeUntilNextPoop <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(MMItemsRegistry.POOP.get());
+            this.timeUntilNextPoop = this.random.nextInt(6000) + 6000;
+        }
+        super.aiStep();
+    }
     @Override
     protected void registerGoals() {
         super.registerGoals();

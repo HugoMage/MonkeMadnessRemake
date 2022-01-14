@@ -2,6 +2,7 @@ package com.hugomage.monkemadness.registry;
 
 import com.hugomage.monkemadness.MonkeMadness;
 import com.hugomage.monkemadness.items.BaleMaterial;
+import com.hugomage.monkemadness.items.PoopItem;
 import com.hugomage.monkemadness.items.tools.PanFlute;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -22,6 +23,7 @@ public class MMItemsRegistry {
     public static final RegistryObject<Item> MUSIC_DISC_BAMBOO = ITEMS.register("music_disc_bamboo", () -> new RecordItem(15, MMSoundsRegistry.DISC_BAMBOO, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> GOlDEN_BANANA = ITEMS.register("golden_banana", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1), 1.0F).effect(new MobEffectInstance(MobEffects.JUMP, 100, 1), 1.0F).build())));
     public static final RegistryObject<Item> BALE_MUSTACHE = ITEMS.register("bale_monkey_mustache", () -> new ArmorItem(new BaleMaterial(), EquipmentSlot.HEAD, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT).stacksTo(1)));
+    public static final RegistryObject<Item> POOP = ITEMS.register("poop", () -> new PoopItem((new Item.Properties()).stacksTo(16).tab(CreativeModeTab.TAB_MISC)));
 
     //Primate Brain
     public static final RegistryObject<Item> PRIMATE_BRAIN = ITEMS.register("primate_brain", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.POISON, 100, 3), 1.0F).build())));

@@ -33,5 +33,9 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(BaleMonkey::new, MobCategory.CREATURE)
                     .sized(1.0f, 1.0f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "bale_monkey").toString()));
+    public static final RegistryObject<EntityType<Poop>> POOP = ENTITY_TYPES.register("poop",
+            () -> EntityType.Builder.<Poop>of(Poop::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "poop").toString()));
 
 }
