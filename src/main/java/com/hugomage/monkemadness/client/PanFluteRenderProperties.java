@@ -17,7 +17,6 @@ public class PanFluteRenderProperties implements IItemRenderProperties {
     {
         return new ItemIRS();
     }
-
     @SubscribeEvent
     public static void hookMethod(ModelRegistryEvent event)
     {

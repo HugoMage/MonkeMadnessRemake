@@ -31,7 +31,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
-
 import javax.annotation.Nullable;
 
 public class Orangutan extends Animal {

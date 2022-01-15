@@ -13,14 +13,11 @@ public class TarsierRenderer extends MobRenderer<Tarsier, TarsierModel<Tarsier>>
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(new ResourceLocation(MonkeMadness.MOD_ID, "primate"), "main");
     public static final ResourceLocation TEXTURE = new ResourceLocation("monkemadness:textures/entity/tarsier.png");
     public static final ResourceLocation ALBINO = new ResourceLocation("monkemadness:textures/entity/albino_tarsier.png");
-
-
     public TarsierRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new TarsierModel<>(renderManagerIn.bakeLayer(TarsierModel.LAYER_LOCATION)), 0.2F);
         this.shadowRadius = 0.3F;
         this.addLayer(new TarsierEyes<>(this));
     }
-
     @Override
     public ResourceLocation getTextureLocation(Tarsier entity) {
         if(entity.getVariant() == 1){

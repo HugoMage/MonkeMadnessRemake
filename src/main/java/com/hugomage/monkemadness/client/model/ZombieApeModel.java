@@ -16,15 +16,12 @@ import net.minecraft.world.entity.HumanoidArm;
 
 public class ZombieApeModel<T extends ZombieApe> extends EntityModel<T> implements ArmedModel {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MonkeMadness.MOD_ID,"zombie_ape"), "main");
-
     private final ModelPart head;
     private final ModelPart leftleg;
     private final ModelPart leftarm;
     private final ModelPart rightleg;
     private final ModelPart rightarm;
     private final ModelPart body;
-
-
     public ZombieApeModel(ModelPart root) {
         this.leftleg = root.getChild("leftleg");
         this.rightleg = root.getChild("rightleg");
@@ -33,7 +30,6 @@ public class ZombieApeModel<T extends ZombieApe> extends EntityModel<T> implemen
         this.leftarm = root.getChild("leftarm");
         this.head = root.getChild("head");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -58,12 +54,10 @@ public class ZombieApeModel<T extends ZombieApe> extends EntityModel<T> implemen
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
     public ModelPart getArm(HumanoidArm p_1912161)
     {
         return p_1912161 == HumanoidArm.LEFT ? this.leftarm : this.rightarm;
     }
-
     public void translateToHand(HumanoidArm sideIn, PoseStack matrixStackIn) {
         this.getArm(sideIn).translateAndRotate(matrixStackIn);
     }
@@ -94,5 +88,4 @@ public class ZombieApeModel<T extends ZombieApe> extends EntityModel<T> implemen
         leftarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
         rightarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
-
 }

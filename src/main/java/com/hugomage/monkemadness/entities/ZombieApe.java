@@ -1,5 +1,6 @@
 package com.hugomage.monkemadness.entities;
 
+import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -21,22 +22,22 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.hoglin.HoglinBase;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class ZombieApe extends Monster {
-
     public static final Ingredient TEMPTATION_ITEMS = Ingredient.of(Items.HONEYCOMB);
     public static final Predicate<LivingEntity> TARGET_ENTITIES = (p_213440_0_) -> {
         EntityType<?> entitytype = p_213440_0_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.COW || entitytype == EntityType.FOX;
     };
-
     public ZombieApe(EntityType<? extends Monster> type, net.minecraft.world.level.Level worldIn) {
         super(type, worldIn);
         this.setCanPickUpLoot(true);
@@ -53,12 +54,9 @@ public class ZombieApe extends Monster {
         }
     }
     public void aiStep() {
-
-
         if (this.attackAnimationRemainingTicks > 0) {
             --this.attackAnimationRemainingTicks;
         }
-
         super.aiStep();
     }
     public int getAttackAnimationRemainingTicks() {
@@ -72,7 +70,6 @@ public class ZombieApe extends Monster {
         } else {
             super.handleEntityEvent(p_70103_1_);
         }
-
     }
     public static AttributeSupplier.Builder setCustomAttributes(){
         return Mob.createMobAttributes()
@@ -84,7 +81,6 @@ public class ZombieApe extends Monster {
     }
     @Override
     protected void registerGoals() {
-
         super.registerGoals();
         this.goalSelector.addGoal(1, new TemptGoal(this, 1.1D, TEMPTATION_ITEMS, false));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -102,24 +98,18 @@ public class ZombieApe extends Monster {
         this.targetSelector.addGoal(10, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
         this.targetSelector.addGoal( 0, new NearestAttackableTargetGoal<>( this, Orangutan.class, true ) );
     }
-
-
     protected int getExperienceReward(Player p_70693_1_) {
         if (this.isBaby()) {
             this.xpReward = (int)((float)this.xpReward * 6.5F);
         }
-
         return super.getExperienceReward(p_70693_1_);
     }
-
-
     @Nullable
     @Override
     protected SoundEvent getAmbientSound ()
     {
         return MMSoundsRegistry.ZOMBIEAPE_AMBIENT.get();
     }
-
     @Override
     protected void playStepSound(BlockPos pos, BlockState blockIn )
     {
@@ -128,13 +118,15 @@ public class ZombieApe extends Monster {
             this.playSound( SoundEvents.ZOMBIE_STEP, this.getSoundVolume() * 0.3F, this.getSoundVolume() );
         }
     }
-
+    @Override
+    public ItemStack getPickedResult(HitResult target) {
+        return new ItemStack(MMItemsRegistry.ZOMBIEAPE_SPAWN_EGG.get());
+    }
     @Nullable
     @Override
     protected SoundEvent  getHurtSound (DamageSource damageSource ) {
         return MMSoundsRegistry.ZOMBIEAPE_HURT.get();
     }
-
     @Nullable
     @Override
     protected SoundEvent getDeathSound () { return MMSoundsRegistry.ZOMBIEAPE_DEATH.get(); }

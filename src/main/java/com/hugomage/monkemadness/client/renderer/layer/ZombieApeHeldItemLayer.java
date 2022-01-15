@@ -27,8 +27,6 @@ public class ZombieApeHeldItemLayer extends RenderLayer<ZombieApe, ZombieApeMode
         p_225628_1_.pushPose();
         p_225628_1_.translate(0.0F, 0.6, -0.3F);
         p_225628_1_.mulPose(Vector3f.XP.rotation(-0.2F));
-
-
         Minecraft.getInstance().getItemInHandRenderer().renderItem(p_225628_4_, itemstack, ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND, false, p_225628_1_, p_225628_2_, p_225628_3_);
         p_225628_1_.popPose();
     }

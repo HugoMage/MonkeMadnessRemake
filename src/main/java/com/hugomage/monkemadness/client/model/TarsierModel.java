@@ -14,14 +14,12 @@ import net.minecraft.util.Mth;
 
 public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MonkeMadness.MOD_ID,"tarsier"), "main");
-
     private final ModelPart head;
     private final ModelPart body;
     private final ModelPart leftarm;
     private final ModelPart leftleg;
     private final ModelPart rightarm;
     private final ModelPart rightleg;
-
     public TarsierModel(ModelPart root) {
         this.head = root.getChild("head");
         this.body = root.getChild("body");
@@ -30,7 +28,6 @@ public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
         this.rightarm = root.getChild("rightarm");
         this.rightleg = root.getChild("rightleg");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -61,7 +58,6 @@ public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
 
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
-
     @Override
     public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.head.xRot = headPitch * ((float)Math.PI / 180F);
@@ -71,7 +67,6 @@ public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
         this.rightarm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * -1.4F * limbSwingAmount;
         this.leftarm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
     }
-
     @Override
     public void renderToBuffer(PoseStack matrixStackIn, VertexConsumer bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
         body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
@@ -81,7 +76,6 @@ public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
         leftarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
         rightarm.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
-
     public void renderOnShoulder(PoseStack p_228284_1_, VertexConsumer p_228284_2_, int p_228284_3_, int p_228284_4_, float p_228284_5_, float p_228284_6_, float p_228284_7_, float p_228284_8_, int p_228284_9_) {
         this.body.render(p_228284_1_, p_228284_2_, p_228284_3_, p_228284_4_);
         this.head.render(p_228284_1_, p_228284_2_, p_228284_3_, p_228284_4_);
@@ -90,5 +84,4 @@ public class TarsierModel<T extends Tarsier> extends EntityModel<T> {
         this.rightarm.render(p_228284_1_, p_228284_2_, p_228284_3_, p_228284_4_);
         this.leftarm.render(p_228284_1_, p_228284_2_, p_228284_3_, p_228284_4_);
     }
-
 }

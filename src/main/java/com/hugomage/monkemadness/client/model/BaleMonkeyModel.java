@@ -21,8 +21,6 @@ public class BaleMonkeyModel<T extends BaleMonkey> extends EntityModel<T> {
     private final ModelPart leg3;
     private final ModelPart leg4;
     private final ModelPart tail;
-
-
     public BaleMonkeyModel(ModelPart root) {
         this.body = root.getChild("body");
         this.head = root.getChild("head");
@@ -32,7 +30,6 @@ public class BaleMonkeyModel<T extends BaleMonkey> extends EntityModel<T> {
         this.leg4 = root.getChild("leg4");
         this.tail = root.getChild("tail");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -61,8 +58,6 @@ public class BaleMonkeyModel<T extends BaleMonkey> extends EntityModel<T> {
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
-
     @Override
     public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.head.xRot = headPitch * ((float)Math.PI / 180F);
@@ -73,8 +68,6 @@ public class BaleMonkeyModel<T extends BaleMonkey> extends EntityModel<T> {
         this.leg1.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.tail.yRot = Mth.cos(limbSwing * 0.6662F) * 0.3F * limbSwingAmount;
     }
-
-
     @Override
     public void renderToBuffer(PoseStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
         body.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -85,5 +78,4 @@ public class BaleMonkeyModel<T extends BaleMonkey> extends EntityModel<T> {
         leg4.render(matrixStack, buffer, packedLight, packedOverlay);
         tail.render(matrixStack, buffer, packedLight, packedOverlay);
     }
-
 }

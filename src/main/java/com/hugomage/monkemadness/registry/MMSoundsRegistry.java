@@ -34,4 +34,16 @@ public class MMSoundsRegistry {
     public static final RegistryObject<SoundEvent> ZOMBIEAPE_DEATH = SOUND_EVENTS.register("entity.zombie_ape.death", () ->
             new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.zombie_ape.death"))
     );
+    public static final RegistryObject<SoundEvent> PROBOSCIS_AMBIENT = SOUND_EVENTS.register("entity.proboscis_monkey.ambient", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.proboscis_monkey.ambient"))
+    );
+    public static final RegistryObject<SoundEvent> PROBOSCIS_HURT = SOUND_EVENTS.register("entity.proboscis_monkey.hurt", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.proboscis_monkey.hurt"))
+    );
+    public static final RegistryObject<SoundEvent> PROBOSCIS_DEATH = SOUND_EVENTS.register("entity.proboscis_monkey.death", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.proboscis_monkey.death"))
+    );
+    public static final RegistryObject<SoundEvent> MANDRILL_AMBIENT = SOUND_EVENTS.register("entity.mandrill.ambient", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.mandrill.ambient"))
+    );
 }

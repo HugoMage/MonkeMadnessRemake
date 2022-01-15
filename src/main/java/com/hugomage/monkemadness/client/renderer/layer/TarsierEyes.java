@@ -10,11 +10,9 @@ import net.minecraft.resources.ResourceLocation;
 
 public class TarsierEyes<T extends Tarsier, M extends EntityModel<T>> extends EyesLayer<T, M> {
     private static final RenderType TARSIER_EYES = RenderType.eyes(new ResourceLocation(MonkeMadness.MOD_ID, "textures/entity/tarsier_eyes.png"));
-
     public TarsierEyes(RenderLayerParent<T, M> rendererIn) {
         super(rendererIn);
     }
-
     public RenderType renderType() {
         return TARSIER_EYES;
     }

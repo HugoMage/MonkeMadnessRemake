@@ -38,6 +38,10 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> TARSIER_SPAWN_EGG = ITEMS.register("tarsier_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.TARSIER, 0x916436, 0xa57646, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> ZOMBIEAPE_SPAWN_EGG = ITEMS.register("zombie_ape_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.ZOMBIEAPE, 0x152419, 0x3c784c, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> BALE_SPAWN_EGG = ITEMS.register("bale_monkey_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.BALE, 0x675e57, 0xc2d2d1, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> PROBOSCIS_SPAWN_EGG = ITEMS.register("proboscis_monkey_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.PROBOSCIS, 0xc49d61, 0xe6e7ee, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> SLOW_LORIS_SPAWN_EGG = ITEMS.register("slow_loris_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.SLOW_LORIS, 0xc6bebb, 0x643f24, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> MANDRILL_SPAWN_EGG = ITEMS.register("mandrill_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.MANDRILL, 0x2c292a, 0x5a70ad, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+
 
     //Holdables
     public static final RegistryObject<Item> MONKEY_MOTIVATOR = ITEMS.register("pan_flute", PanFlute::new);

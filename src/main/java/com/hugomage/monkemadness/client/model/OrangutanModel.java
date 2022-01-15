@@ -105,7 +105,6 @@ public class OrangutanModel<T extends Orangutan> extends AgeableListModel<T> {
             this.rightarm.xRot = -2.0F + 1.5F * Mth.triangleWave((float) i - p_212843_4_, 10.0F);
             this.leftarm.xRot = -2.0F + 1.5F * Mth.triangleWave((float) i - p_212843_4_, 10.0F);
         }
-
     }
     @Override
     public void renderToBuffer(PoseStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){

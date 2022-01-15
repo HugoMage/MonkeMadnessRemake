@@ -26,8 +26,6 @@ public class SnubNosedMonkeyHeldItemLayer extends RenderLayer<SnubNosedMonkey, S
         p_225628_1_.translate(0.1F, 0.5, -0.1F);
         p_225628_1_.mulPose(Vector3f.YP.rotationDegrees(90.0F));
         p_225628_1_.mulPose(Vector3f.ZP.rotationDegrees(-50.0F));
-
-
         Minecraft.getInstance().getItemInHandRenderer().renderItem(p_225628_4_, itemstack, ItemTransforms.TransformType.GROUND, false, p_225628_1_, p_225628_2_, p_225628_3_);
         p_225628_1_.popPose();
     }

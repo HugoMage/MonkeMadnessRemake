@@ -29,32 +29,32 @@
       }
     ]
   },
-  "entity.proboscis.ambient": {
+  "entity.proboscis_monkey.ambient": {
     "category": "entity",
-    "subtitle": "entity.proboscis.ambient",
+    "subtitle": "entity.proboscis_monkey.ambient",
     "sounds": [
       {
-        "name": "monkemadness:entity/proboscis/entity.proboscis.ambient",
+        "name": "monkemadness:entity/proboscis_monkey/entity.proboscis_monkey.ambient",
         "stream": true
       }
     ]
   },
-  "entity.proboscis.hurt": {
+  "entity.proboscis_monkey.hurt": {
     "category": "entity",
-    "subtitle": "entity.proboscis.hurt",
+    "subtitle": "entity.proboscis_monkey.hurt",
     "sounds": [
       {
-        "name": "monkemadness:entity/proboscis/entity.proboscis.hurt",
+        "name": "monkemadness:entity/proboscis_monkey/entity.proboscis_monkey.hurt",
         "stream": true
       }
     ]
   },
-  "entity.proboscis.death": {
+  "entity.proboscis_monkey.death": {
     "category": "entity",
-    "subtitle": "entity.proboscis.death",
+    "subtitle": "entity.proboscis_monkey.death",
     "sounds": [
       {
-        "name": "monkemadness:entity/proboscis/entity.proboscis.death",
+        "name": "monkemadness:entity/proboscis_monkey/entity.proboscis_monkey.death",
         "stream": true
       }
     ]

@@ -37,5 +37,17 @@ public class MMEntitysRegistry {
             () -> EntityType.Builder.<Poop>of(Poop::new, MobCategory.MISC)
                     .sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "poop").toString()));
+    public static final RegistryObject<EntityType<ProboscisMonkey>> PROBOSCIS = ENTITY_TYPES.register("proboscis_monkey", ()->
+            EntityType.Builder.of(ProboscisMonkey::new, MobCategory.CREATURE)
+                    .sized(1.0f,1.0f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "proboscis_monkey").toString()));
+    public static final RegistryObject<EntityType<SlowLoris>> SLOW_LORIS = ENTITY_TYPES.register("slow_loris", ()->
+            EntityType.Builder.of(SlowLoris::new, MobCategory.CREATURE)
+                    .sized(0.8f,0.6f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "slow_loris").toString()));
+    public static final RegistryObject<EntityType<Mandrill>> MANDRILL = ENTITY_TYPES.register("mandrill", ()->
+            EntityType.Builder.of(Mandrill::new, MobCategory.CREATURE)
+                    .sized(1.0f,1.3f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "mandrill").toString()));
 
 }

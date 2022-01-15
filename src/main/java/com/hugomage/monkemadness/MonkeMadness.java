@@ -60,6 +60,9 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.TARSIER.get(), TarsierRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.ZOMBIEAPE.get(), ZombieApeRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.BALE.get(), BaleMonkeyRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.PROBOSCIS.get(), ProboscisRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.SLOW_LORIS.get(), SlowLorisRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.MANDRILL.get(), MandrillRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
@@ -75,14 +78,20 @@ public class MonkeMadness
         event.registerLayerDefinition(TarsierModel.LAYER_LOCATION, TarsierModel::createBodyLayer);
         event.registerLayerDefinition(ZombieApeModel.LAYER_LOCATION, ZombieApeModel::createBodyLayer);
         event.registerLayerDefinition(BaleMonkeyModel.LAYER_LOCATION, BaleMonkeyModel::createBodyLayer);
+        event.registerLayerDefinition(ProboscisModel.LAYER_LOCATION, ProboscisModel::createBodyLayer);
+        event.registerLayerDefinition(SlowLorisModel.LAYER_LOCATION, SlowLorisModel::createBodyLayer);
+        event.registerLayerDefinition(MandrillModel.LAYER_LOCATION, MandrillModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
         event.put(MMEntitysRegistry.ORANGUTAN.get(), Orangutan.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.SLOW_LORIS.get(), SlowLoris.setCustomAttributes().build());
         event.put(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), SnubNosedMonkey.setCustomAttributes().build());
         event.put(MMEntitysRegistry.TARSIER.get(), Tarsier.setCustomAttributes().build());
         event.put(MMEntitysRegistry.ZOMBIEAPE.get(), ZombieApe.setCustomAttributes().build());
         event.put(MMEntitysRegistry.BALE.get(), BaleMonkey.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.PROBOSCIS.get(), ProboscisMonkey.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.MANDRILL.get(), Mandrill.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

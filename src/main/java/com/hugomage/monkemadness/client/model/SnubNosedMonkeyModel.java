@@ -24,7 +24,6 @@ public class SnubNosedMonkeyModel <T extends SnubNosedMonkey> extends EntityMode
     private final ModelPart rightarm;
     private final ModelPart rightleg;
     private final ModelPart leftleg;
-
     public SnubNosedMonkeyModel(ModelPart root) {
         this.body = root.getChild("body");
         this.head = root.getChild("head");
@@ -33,7 +32,6 @@ public class SnubNosedMonkeyModel <T extends SnubNosedMonkey> extends EntityMode
         this.rightleg = root.getChild("rightleg");
         this.leftleg = root.getChild("leftleg");
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -53,7 +51,6 @@ public class SnubNosedMonkeyModel <T extends SnubNosedMonkey> extends EntityMode
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         body.render(poseStack, buffer, packedLight, packedOverlay);
@@ -64,12 +61,9 @@ public class SnubNosedMonkeyModel <T extends SnubNosedMonkey> extends EntityMode
         leftleg.render(poseStack, buffer, packedLight, packedOverlay);
     }
 
-
-
     public void translateToHand(HumanoidArm sideIn, PoseStack matrixStackIn) {
         this.getArm(sideIn).translateAndRotate(matrixStackIn);
     }
-
     @Override
     public void setupAnim(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.head.xRot = headPitch * ((float)Math.PI / 180F);
@@ -84,7 +78,6 @@ public class SnubNosedMonkeyModel <T extends SnubNosedMonkey> extends EntityMode
     {
         return p_1912161 == HumanoidArm.LEFT ? this.leftarm : this.rightarm;
     }
-
     public ModelPart getSnubNosedMonkeyArm() {
         return this.leftarm;
     }

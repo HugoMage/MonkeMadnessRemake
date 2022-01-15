@@ -21,5 +21,11 @@
   "item.monkemadness.zombie_ape_spawn_egg": "Zombie Ape Spawn Egg",
   "entity.monkemadness.bale_monkey": "Bale Monkey",
   "item.monkemadness.bale_monkey_spawn_egg": "Bale Monkey Spawn Egg",
-  "item.monkemadness.bale_monkey_mustache": "Bale Monkey Mustache"
+  "item.monkemadness.bale_monkey_mustache": "Bale Monkey Mustache",
+  "entity.monkemadness.proboscis_monkey": "Proboscis Monkey",
+  "item.monkemadness.proboscis_monkey_spawn_egg": "Proboscis Monkey Spawn Egg",
+  "entity.monkemadness.slow_loris": "Slow Loris",
+  "item.monkemadness.slow_loris_spawn_egg": "Slow Loris Spawn Egg",
+  "entity.monkemadness.mandrill": "Mandrill",
+  "item.monkemadness.mandrill_spawn_egg": "Mandrill Spawn Egg"
 }
