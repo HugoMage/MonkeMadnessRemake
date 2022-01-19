@@ -27,5 +27,9 @@
   "entity.monkemadness.slow_loris": "Slow Loris",
   "item.monkemadness.slow_loris_spawn_egg": "Slow Loris Spawn Egg",
   "entity.monkemadness.mandrill": "Mandrill",
-  "item.monkemadness.mandrill_spawn_egg": "Mandrill Spawn Egg"
+  "item.monkemadness.mandrill_spawn_egg": "Mandrill Spawn Egg",
+  "entity.monkemadness.gigantopithecus": "Gigantopithecus",
+  "item.monkemadness.gigantopithecus_spawn_egg": "Gigantopithecus Spawn Egg",
+  "entity.monkemadness.japanese_macaque": "Japanese Macaque",
+  "item.monkemadness.japanese_macaque_spawn_egg": "Japanese Macaque Spawn Egg"
 }

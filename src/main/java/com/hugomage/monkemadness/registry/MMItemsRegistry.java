@@ -41,6 +41,8 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> PROBOSCIS_SPAWN_EGG = ITEMS.register("proboscis_monkey_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.PROBOSCIS, 0xc49d61, 0xe6e7ee, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> SLOW_LORIS_SPAWN_EGG = ITEMS.register("slow_loris_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.SLOW_LORIS, 0xc6bebb, 0x643f24, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> MANDRILL_SPAWN_EGG = ITEMS.register("mandrill_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.MANDRILL, 0x2c292a, 0x5a70ad, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> GIGANTO_SPAWN_EGG = ITEMS.register("gigantopithecus_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.GIGANTOPITHECUS, 0x9c4317, 0x86849b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> JAPAN_SPAWN_EGG = ITEMS.register("japanese_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.JAPANESEMACAQUE, 0xa3958c, 0xae3b4f, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
 
     //Holdables

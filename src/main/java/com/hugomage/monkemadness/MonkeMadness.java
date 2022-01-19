@@ -63,6 +63,8 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.PROBOSCIS.get(), ProboscisRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.SLOW_LORIS.get(), SlowLorisRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.MANDRILL.get(), MandrillRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.GIGANTOPITHECUS.get(), GigantoRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaqueRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
@@ -81,6 +83,8 @@ public class MonkeMadness
         event.registerLayerDefinition(ProboscisModel.LAYER_LOCATION, ProboscisModel::createBodyLayer);
         event.registerLayerDefinition(SlowLorisModel.LAYER_LOCATION, SlowLorisModel::createBodyLayer);
         event.registerLayerDefinition(MandrillModel.LAYER_LOCATION, MandrillModel::createBodyLayer);
+        event.registerLayerDefinition(GigantopithecusModel.LAYER_LOCATION, GigantopithecusModel::createBodyLayer);
+        event.registerLayerDefinition(JapaneseMacaqueModel.LAYER_LOCATION, JapaneseMacaqueModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -92,6 +96,8 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.BALE.get(), BaleMonkey.setCustomAttributes().build());
         event.put(MMEntitysRegistry.PROBOSCIS.get(), ProboscisMonkey.setCustomAttributes().build());
         event.put(MMEntitysRegistry.MANDRILL.get(), Mandrill.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.GIGANTOPITHECUS.get(), Gigantopithecus.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaque.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

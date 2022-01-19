@@ -49,5 +49,13 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(Mandrill::new, MobCategory.CREATURE)
                     .sized(1.0f,1.3f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "mandrill").toString()));
+    public static final RegistryObject<EntityType<Gigantopithecus>> GIGANTOPITHECUS = ENTITY_TYPES.register("gigantopithecus", ()->
+            EntityType.Builder.of(Gigantopithecus::new, MobCategory.CREATURE)
+                    .sized(2.9f,3.5f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "gigantopithecus").toString()));
+    public static final RegistryObject<EntityType<JapaneseMacaque>> JAPANESEMACAQUE = ENTITY_TYPES.register("japanese_macaque", ()->
+            EntityType.Builder.of(JapaneseMacaque::new, MobCategory.CREATURE)
+                    .sized(1.0f,1.3f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "japanese_macaque").toString()));
 
 }

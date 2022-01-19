@@ -44,12 +44,12 @@ import java.util.List;
 import java.util.function.Predicate;
 
 
-public class Tarsier extends ShoulderRidingEntity {
+public class Tarsier extends TamableAnimal {
     private int ticksSinceEaten;
     public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     private static final Predicate<ItemEntity> TRUSTED_TARGET_SELECTOR = (p_213489_0_) -> !p_213489_0_.hasPickUpDelay() && p_213489_0_.isAlive();
     public static final Ingredient BREEDITEM = Ingredient.of(Items.SUGAR_CANE, Items.MELON_SLICE, Items.HONEYCOMB, Items.GLOW_BERRIES);
-    public Tarsier(EntityType<? extends ShoulderRidingEntity> type, Level worldIn) {
+    public Tarsier(EntityType<? extends TamableAnimal> type, Level worldIn) {
         super(type, worldIn);
         this.setCanPickUpLoot(true);
     }
@@ -81,7 +81,6 @@ public class Tarsier extends ShoulderRidingEntity {
         this.goalSelector.addGoal(6, new PanicGoal(this, 1.0D));
         this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Ocelot.class, 6.0F, 1.0D, 1.2D));
         this.goalSelector.addGoal(7, new Tarsier.FindItemsGoal());
-        this.goalSelector.addGoal(3, new LandOnOwnersShoulderGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(10, new Tarsier.TarsierEatBerriesGoal(1.2F, 12, 2));
