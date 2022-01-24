@@ -45,6 +45,7 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> GIGANTO_SPAWN_EGG = ITEMS.register("gigantopithecus_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.GIGANTOPITHECUS, 0x9c4317, 0x86849b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> JAPAN_SPAWN_EGG = ITEMS.register("japanese_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.JAPANESEMACAQUE, 0xa3958c, 0xae3b4f, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> POACHER_SPAWN_EGG = ITEMS.register("poacher_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.POACHER, 0x242827, 0x959b9b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> CRESTED_SPAWN_EGG = ITEMS.register("crested_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.CRESTEDMACAQUE, 0x363838, 0xdb8794, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
 
     //Holdables

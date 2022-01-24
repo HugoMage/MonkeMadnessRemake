@@ -34,5 +34,7 @@
   "item.monkemadness.japanese_macaque_spawn_egg": "Japanese Macaque Spawn Egg",
   "entity.monkemadness.poacher": "Poacher",
   "item.monkemadness.poacher_spawn_egg": "Poacher Spawn Egg",
-  "item.monkemadness.carvers_knife": "Carvers Knife"
+  "item.monkemadness.carvers_knife": "Carvers Knife",
+  "entity.monkemadness.crested_macaque": "Crested Macaque",
+  "item.monkemadness.crested_macaque_spawn_egg": "Crested Macaque Spawn Egg"
 }

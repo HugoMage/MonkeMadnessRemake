@@ -19,6 +19,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -96,7 +97,10 @@ public class Poacher extends AbstractIllager {
     public void applyRaidBuffs(int wave, boolean p_213660_2_) {
 
     }
-
+    @Override
+    public ItemStack getPickedResult(HitResult target) {
+        return new ItemStack(MMItemsRegistry.POACHER_SPAWN_EGG.get());
+    }
     @Override
     public SoundEvent getCelebrateSound() {
         return null;

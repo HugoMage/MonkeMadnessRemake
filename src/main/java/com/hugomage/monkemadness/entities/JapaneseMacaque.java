@@ -1,5 +1,6 @@
 package com.hugomage.monkemadness.entities;
 import com.hugomage.monkemadness.registry.MMEntitysRegistry;
+import com.hugomage.monkemadness.registry.MMItemsRegistry;
 import com.hugomage.monkemadness.registry.MMSoundsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.HitResult;
 
 import javax.annotation.Nullable;
 
@@ -102,6 +104,10 @@ public class JapaneseMacaque extends Animal {
         protected boolean isValidTarget(LevelReader p_30270_, BlockPos p_30271_) {
             return p_30270_.getBlockState(p_30271_).is(Blocks.WATER);
         }
+    }
+    @Override
+    public ItemStack getPickedResult(HitResult target) {
+        return new ItemStack(MMItemsRegistry.JAPAN_SPAWN_EGG.get());
     }
     @Nullable
     @Override

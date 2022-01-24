@@ -1,7 +1,7 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "monkemadness:items/carvers_knife"
+    "layer0": "monkemadness:item/carvers_knife"
   },
   "display": {
     "ground": {
