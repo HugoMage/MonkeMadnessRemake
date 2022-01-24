@@ -2,6 +2,7 @@ package com.hugomage.monkemadness.registry;
 
 import com.hugomage.monkemadness.MonkeMadness;
 import com.hugomage.monkemadness.items.BaleMaterial;
+import com.hugomage.monkemadness.items.Carver;
 import com.hugomage.monkemadness.items.PoopItem;
 import com.hugomage.monkemadness.items.tools.PanFlute;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -43,8 +44,11 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> MANDRILL_SPAWN_EGG = ITEMS.register("mandrill_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.MANDRILL, 0x2c292a, 0x5a70ad, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> GIGANTO_SPAWN_EGG = ITEMS.register("gigantopithecus_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.GIGANTOPITHECUS, 0x9c4317, 0x86849b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> JAPAN_SPAWN_EGG = ITEMS.register("japanese_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.JAPANESEMACAQUE, 0xa3958c, 0xae3b4f, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> POACHER_SPAWN_EGG = ITEMS.register("poacher_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.POACHER, 0x242827, 0x959b9b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
 
     //Holdables
-    public static final RegistryObject<Item> MONKEY_MOTIVATOR = ITEMS.register("pan_flute", PanFlute::new);
+    public static final RegistryObject<Item> PAN_FLUTE = ITEMS.register("pan_flute", PanFlute::new);
+    public static final RegistryObject<SwordItem> CARVER = ITEMS.register("carvers_knife", () -> new SwordItem(Carver.BAT, 4, -1.8f, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)) {});
+
 }

@@ -31,5 +31,8 @@
   "entity.monkemadness.gigantopithecus": "Gigantopithecus",
   "item.monkemadness.gigantopithecus_spawn_egg": "Gigantopithecus Spawn Egg",
   "entity.monkemadness.japanese_macaque": "Japanese Macaque",
-  "item.monkemadness.japanese_macaque_spawn_egg": "Japanese Macaque Spawn Egg"
+  "item.monkemadness.japanese_macaque_spawn_egg": "Japanese Macaque Spawn Egg",
+  "entity.monkemadness.poacher": "Poacher",
+  "item.monkemadness.poacher_spawn_egg": "Poacher Spawn Egg",
+  "item.monkemadness.carvers_knife": "Carvers Knife"
 }

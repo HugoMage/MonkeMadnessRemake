@@ -65,6 +65,7 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.MANDRILL.get(), MandrillRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.GIGANTOPITHECUS.get(), GigantoRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaqueRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.POACHER.get(), PoacherRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
@@ -85,6 +86,7 @@ public class MonkeMadness
         event.registerLayerDefinition(MandrillModel.LAYER_LOCATION, MandrillModel::createBodyLayer);
         event.registerLayerDefinition(GigantopithecusModel.LAYER_LOCATION, GigantopithecusModel::createBodyLayer);
         event.registerLayerDefinition(JapaneseMacaqueModel.LAYER_LOCATION, JapaneseMacaqueModel::createBodyLayer);
+        event.registerLayerDefinition(PoacherModel.LAYER_LOCATION, PoacherModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -98,6 +100,7 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.MANDRILL.get(), Mandrill.setCustomAttributes().build());
         event.put(MMEntitysRegistry.GIGANTOPITHECUS.get(), Gigantopithecus.setCustomAttributes().build());
         event.put(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaque.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.POACHER.get(), Poacher.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
