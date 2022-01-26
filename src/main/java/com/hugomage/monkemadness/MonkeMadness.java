@@ -67,6 +67,7 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaqueRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POACHER.get(), PoacherRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.CRESTEDMACAQUE.get(), CrestedRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.BONOBO.get(), BonoboRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
@@ -89,6 +90,7 @@ public class MonkeMadness
         event.registerLayerDefinition(JapaneseMacaqueModel.LAYER_LOCATION, JapaneseMacaqueModel::createBodyLayer);
         event.registerLayerDefinition(PoacherModel.LAYER_LOCATION, PoacherModel::createBodyLayer);
         event.registerLayerDefinition(CrestedModel.LAYER_LOCATION, CrestedModel::createBodyLayer);
+        event.registerLayerDefinition(BonoboModel.LAYER_LOCATION, BonoboModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -104,6 +106,7 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.JAPANESEMACAQUE.get(), JapaneseMacaque.setCustomAttributes().build());
         event.put(MMEntitysRegistry.POACHER.get(), Poacher.setCustomAttributes().build());
         event.put(MMEntitysRegistry.CRESTEDMACAQUE.get(), CrestedMacaque.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.BONOBO.get(), Bonobo.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

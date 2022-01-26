@@ -3,7 +3,9 @@ package com.hugomage.monkemadness.registry;
 import com.hugomage.monkemadness.MonkeMadness;
 import com.hugomage.monkemadness.items.BaleMaterial;
 import com.hugomage.monkemadness.items.Carver;
+import com.hugomage.monkemadness.items.MonkeyMotivator;
 import com.hugomage.monkemadness.items.PoopItem;
+import com.hugomage.monkemadness.items.tools.Motivator;
 import com.hugomage.monkemadness.items.tools.PanFlute;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -46,10 +48,11 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> JAPAN_SPAWN_EGG = ITEMS.register("japanese_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.JAPANESEMACAQUE, 0xa3958c, 0xae3b4f, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> POACHER_SPAWN_EGG = ITEMS.register("poacher_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.POACHER, 0x242827, 0x959b9b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> CRESTED_SPAWN_EGG = ITEMS.register("crested_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.CRESTEDMACAQUE, 0x363838, 0xdb8794, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
-
+    public static final RegistryObject<ForgeSpawnEggItem> BONOBO_SPAWN_EGG = ITEMS.register("bonobo_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.BONOBO, 0x1a1b1e, 0x4d4e55, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
     //Holdables
     public static final RegistryObject<Item> PAN_FLUTE = ITEMS.register("pan_flute", PanFlute::new);
     public static final RegistryObject<SwordItem> CARVER = ITEMS.register("carvers_knife", () -> new SwordItem(Carver.BAT, 4, -1.8f, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)) {});
+    public static final RegistryObject<MonkeyMotivator> MOTIVATOR = ITEMS.register("monkey_motivator", () -> new MonkeyMotivator(Motivator.MOTIVATING, 3, -2.8f, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)) {});
 
 }
