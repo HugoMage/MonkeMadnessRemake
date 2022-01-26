@@ -36,9 +36,5 @@ public class Motivator {
             Ingredient repairMaterial = Ingredient.of(MMItemsRegistry.GOlDEN_BANANA.get());
             return repairMaterial;
         }
-
-
     };
-
-
 }

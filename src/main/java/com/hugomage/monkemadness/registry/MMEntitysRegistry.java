@@ -69,5 +69,13 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(Bonobo::new, MobCategory.CREATURE)
                     .sized(1.0f,1.1f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "bonobo").toString()));
+    public static final RegistryObject<EntityType<Gelada>> GELADA = ENTITY_TYPES.register("gelada", ()->
+            EntityType.Builder.of(Gelada::new, MobCategory.CREATURE)
+                    .sized(1.2f,1.1f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "gelada").toString()));
+    public static final RegistryObject<EntityType<Gibbon>> GIBBON = ENTITY_TYPES.register("gibbon", ()->
+            EntityType.Builder.of(Gibbon::new, MobCategory.CREATURE)
+                    .sized(0.5f,1.1f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "gibbon").toString()));
 
 }

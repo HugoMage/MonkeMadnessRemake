@@ -15,8 +15,8 @@
   "item.monkemadness.poop": "Poop",
   "entity.monkemadness.poop": "Poop",
   "item.monkemadness.golden_banana": "Golden Banana",
-  "item.monke_madness.music_disc_bamboo": "Music Disc",
-  "item.monke_madness.music_disc_bamboo.desc": "Pyrocide - Bamboo",
+  "item.monkemadness.music_disc_bamboo": "Music Disc",
+  "item.monkemadness.music_disc_bamboo.desc": "Pyrocide - Bamboo",
   "entity.monkemadness.tarsier": "Tarsier",
   "item.monkemadness.tarsier_spawn_egg": "Tarsier Spawn Egg",
   "entity.monkemadness.zombie_ape": "Zombie Ape",
@@ -39,5 +39,9 @@
   "item.monkemadness.carvers_knife": "Carvers Knife",
   "item.monkemadness.monkey_motivator": "Monkey Motivator",
   "entity.monkemadness.crested_macaque": "Crested Macaque",
-  "item.monkemadness.crested_macaque_spawn_egg": "Crested Macaque Spawn Egg"
+  "item.monkemadness.crested_macaque_spawn_egg": "Crested Macaque Spawn Egg",
+  "entity.monkemadness.gelada": "Gelada",
+  "item.monkemadness.gelada_spawn_egg": "Gelada Spawn Egg",
+  "entity.monkemadness.gibbon": "Gibbon",
+  "item.monkemadness.gibbon_spawn_egg": "Gibbon Spawn Egg"
 }

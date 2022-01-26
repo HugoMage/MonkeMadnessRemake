@@ -49,6 +49,8 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> POACHER_SPAWN_EGG = ITEMS.register("poacher_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.POACHER, 0x242827, 0x959b9b, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> CRESTED_SPAWN_EGG = ITEMS.register("crested_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.CRESTEDMACAQUE, 0x363838, 0xdb8794, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> BONOBO_SPAWN_EGG = ITEMS.register("bonobo_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.BONOBO, 0x1a1b1e, 0x4d4e55, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> GELADA_SPAWN_EGG = ITEMS.register("gelada_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.GELADA, 0xbb7341, 0x993035, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> GIBBON_SPAWN_EGG = ITEMS.register("gibbon_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.GIBBON, 0x322d34, 0xd5cdcb, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
     //Holdables
     public static final RegistryObject<Item> PAN_FLUTE = ITEMS.register("pan_flute", PanFlute::new);
