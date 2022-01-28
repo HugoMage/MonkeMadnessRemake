@@ -70,6 +70,7 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.BONOBO.get(), BonoboRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.GELADA.get(), GeladaRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.GIBBON.get(), GibbonRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.HOWLER_MONKEY.get(), HowlerMonkeyRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
         PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
         PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
@@ -95,6 +96,7 @@ public class MonkeMadness
         event.registerLayerDefinition(BonoboModel.LAYER_LOCATION, BonoboModel::createBodyLayer);
         event.registerLayerDefinition(GeladaModel.LAYER_LOCATION, GeladaModel::createBodyLayer);
         event.registerLayerDefinition(GibbonModel.LAYER_LOCATION, GibbonModel::createBodyLayer);
+        event.registerLayerDefinition(HowlerMonkeyModel.LAYER_LOCATION, HowlerMonkeyModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -113,6 +115,7 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.BONOBO.get(), Bonobo.setCustomAttributes().build());
         event.put(MMEntitysRegistry.GELADA.get(), Gelada.setCustomAttributes().build());
         event.put(MMEntitysRegistry.GIBBON.get(), Gibbon.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.HOWLER_MONKEY.get(), HowlerMonkey.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
