@@ -48,6 +48,7 @@ public class Gigantopithecus extends Animal {
     public static final Ingredient BREEDITEM = Ingredient.of(Items.BAMBOO);
     private int attackAnimationRemainingTicks;
     public boolean inWall;
+    public int timeUntilNextPoop = this.random.nextInt(4000) + 4000;
     public static AttributeSupplier.Builder setCustomAttributes(){
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 100.0D)
@@ -69,7 +70,11 @@ public class Gigantopithecus extends Animal {
         }
     }
     public void aiStep() {
-
+        if (!this.level.isClientSide && this.isAlive() && --this.timeUntilNextPoop <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(MMItemsRegistry.POOP.get());
+            this.timeUntilNextPoop = this.random.nextInt(6000) + 6000;
+        }
         if (!this.level.isClientSide) {
             this.inWall = this.checkWalls(this.getBoundingBox());
         }
