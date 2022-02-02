@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:bone"
+    },
+    "title": {
+      "translate": "advancements.monkemadness.gigantopithecus.title"
+    },
+    "description": {
+      "translate": "advancements.monkemadness.gigantopithecus.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "monkemadness:gigantopithecus"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "killed",
+        "killed_by",
+        "interact"
+      ]
+    ]
+  }
+}

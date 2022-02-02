@@ -55,4 +55,13 @@ public class MMSoundsRegistry {
     public static final RegistryObject<SoundEvent> MANDRILL_AMBIENT = SOUND_EVENTS.register("entity.mandrill.ambient", () ->
             new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.mandrill.ambient"))
     );
+    public static final RegistryObject<SoundEvent> RHESUS_AMBIENT = SOUND_EVENTS.register("entity.rhesus.ambient", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.rhesus.ambient"))
+    );
+    public static final RegistryObject<SoundEvent> RHESUS_HURT = SOUND_EVENTS.register("entity.rhesus.hurt", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.rhesus.hurt"))
+    );
+    public static final RegistryObject<SoundEvent> RHESUS_DEATH = SOUND_EVENTS.register("entity.rhesus.death", () ->
+            new SoundEvent(new ResourceLocation(MonkeMadness.MOD_ID, "entity.rhesus.death"))
+    );
 }

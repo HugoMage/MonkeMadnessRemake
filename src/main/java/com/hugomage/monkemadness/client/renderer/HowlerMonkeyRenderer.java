@@ -19,4 +19,5 @@ public class HowlerMonkeyRenderer extends MobRenderer<HowlerMonkey, HowlerMonkey
     public ResourceLocation getTextureLocation(HowlerMonkey entity) {
         return entity.IsOpenMouthTexture() ? POG : TEXTURE;
     }
+
 }

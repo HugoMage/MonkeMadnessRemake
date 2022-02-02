@@ -81,5 +81,22 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(HowlerMonkey::new, MobCategory.CREATURE)
                     .sized(1.0f,1.0f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "howler_monkey").toString()));
+    public static final RegistryObject<EntityType<Tamarin>> TAMARIN = ENTITY_TYPES.register("tamarin", ()->
+            EntityType.Builder.of(Tamarin::new, MobCategory.CREATURE)
+                    .sized(0.6f,0.6f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "tamarin").toString()));
+    public static final RegistryObject<EntityType<Lemur>> LEMUR = ENTITY_TYPES.register("lemur", ()->
+            EntityType.Builder.of(Lemur::new, MobCategory.CREATURE)
+                    .sized(0.8f,0.6f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "lemur").toString()));
+    public static final RegistryObject<EntityType<BushBaby>> BUSHBABY = ENTITY_TYPES.register("bush_baby", ()->
+            EntityType.Builder.of(BushBaby::new, MobCategory.CREATURE)
+                    .sized(1.0f, 1.0f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "bush_baby").toString()));
+    public static final RegistryObject<EntityType<Uakari>> UAKARI = ENTITY_TYPES.register("uakari", ()->
+            EntityType.Builder.of(Uakari::new, MobCategory.CREATURE)
+                    .sized(1.0f,0.7f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "uakari").toString()));
+
 
 }

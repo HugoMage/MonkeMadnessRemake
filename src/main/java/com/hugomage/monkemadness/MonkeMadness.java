@@ -10,7 +10,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -51,7 +54,25 @@ public class MonkeMadness
     }
     private void registerCommon(FMLCommonSetupEvent event) {
         SpawnPlacements.register(MMEntitysRegistry.ORANGUTAN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
-
+        SpawnPlacements.register(MMEntitysRegistry.SNUBNOSEDMONKEY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.TARSIER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.ZOMBIEAPE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.BALE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.PROBOSCIS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.SLOW_LORIS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.MANDRILL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.GIGANTOPITHECUS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.JAPANESEMACAQUE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.POACHER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Pillager::checkMobSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.CRESTEDMACAQUE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.BONOBO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.GIBBON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.GELADA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.HOWLER_MONKEY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.TAMARIN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.LEMUR.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.BUSHBABY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.UAKARI.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
     }
     @SubscribeEvent
     public void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers  event) {
@@ -71,14 +92,11 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.GELADA.get(), GeladaRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.GIBBON.get(), GibbonRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.HOWLER_MONKEY.get(), HowlerMonkeyRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.TAMARIN.get(), TamarinRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.LEMUR.get(), LemurRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.BUSHBABY.get(), BushBabyRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.UAKARI.get(), UakariRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
-        PlayerRenderer managerDefault = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("default");
-        PlayerRenderer managerSlim = (PlayerRenderer) Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().get("slim");
-
-        if (managerDefault != null && managerSlim != null) {
-            managerDefault.addLayer(new TarsierOnShoulderLayer<>(managerDefault));
-            managerSlim.addLayer(new TarsierOnShoulderLayer<>(managerSlim));
-        }
     }
     public void registerLayerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(OrangutanModel.LAYER_LOCATION, OrangutanModel::createBodyLayer);
@@ -96,7 +114,11 @@ public class MonkeMadness
         event.registerLayerDefinition(BonoboModel.LAYER_LOCATION, BonoboModel::createBodyLayer);
         event.registerLayerDefinition(GeladaModel.LAYER_LOCATION, GeladaModel::createBodyLayer);
         event.registerLayerDefinition(GibbonModel.LAYER_LOCATION, GibbonModel::createBodyLayer);
+        event.registerLayerDefinition(TamarinModel.LAYER_LOCATION, TamarinModel::createBodyLayer);
+        event.registerLayerDefinition(BushBabyModel.LAYER_LOCATION, BushBabyModel::createBodyLayer);
         event.registerLayerDefinition(HowlerMonkeyModel.LAYER_LOCATION, HowlerMonkeyModel::createBodyLayer);
+        event.registerLayerDefinition(LemurModel.LAYER_LOCATION, LemurModel::createBodyLayer);
+        event.registerLayerDefinition(UakariModel.LAYER_LOCATION, UakariModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -116,6 +138,10 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.GELADA.get(), Gelada.setCustomAttributes().build());
         event.put(MMEntitysRegistry.GIBBON.get(), Gibbon.setCustomAttributes().build());
         event.put(MMEntitysRegistry.HOWLER_MONKEY.get(), HowlerMonkey.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.TAMARIN.get(), Tamarin.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.LEMUR.get(), Lemur.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.BUSHBABY.get(), BushBaby.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.UAKARI.get(), Uakari.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

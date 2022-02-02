@@ -43,5 +43,17 @@
   "entity.monkemadness.gelada": "Gelada",
   "item.monkemadness.gelada_spawn_egg": "Gelada Spawn Egg",
   "entity.monkemadness.gibbon": "Gibbon",
-  "item.monkemadness.gibbon_spawn_egg": "Gibbon Spawn Egg"
+  "item.monkemadness.gibbon_spawn_egg": "Gibbon Spawn Egg",
+  "entity.monkemadness.howler_monkey": "Howler Monkey",
+  "item.monkemadness.howler_monkey_spawn_egg": "Howler Monkey Spawn Egg",
+  "entity.monkemadness.tamarin": "Tamarin",
+  "item.monkemadness.tamarin_spawn_egg": "Tamarin Spawn Egg",
+  "entity.monkemadness.bush_baby": "Bush Baby",
+  "item.monkemadness.bush_baby_spawn_egg": "Bush Baby Spawn Egg",
+  "entity.monkemadness.ringtailed_lemur": "RingTailed Lemur",
+  "item.monkemadness.ringtailed_lemur_spawn_egg": "RingTailed Lemur Spawn Egg",
+  "entity.monkemadness.uakari": "Uakari",
+  "item.monkemadness.uakari_spawn_egg": "Uakari Spawn Egg",
+  "advancements.monkemadness.gigantopithecus.title": "Don't mess with the king",
+  "advancements.monkemadness.gigantopithecus.desc": "Punch a Gigantopithecus"
 }
