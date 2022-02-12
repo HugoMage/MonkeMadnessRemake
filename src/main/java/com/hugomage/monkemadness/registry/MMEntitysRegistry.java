@@ -97,6 +97,10 @@ public class MMEntitysRegistry {
             EntityType.Builder.of(Uakari::new, MobCategory.CREATURE)
                     .sized(1.0f,0.7f)
                     .build(new ResourceLocation(MonkeMadness.MOD_ID, "uakari").toString()));
+    public static final RegistryObject<EntityType<Rhesus>> RHESUS = ENTITY_TYPES.register("rhesus_macaque", ()->
+            EntityType.Builder.of(Rhesus::new, MobCategory.CREATURE)
+                    .sized(1.0f,0.7f)
+                    .build(new ResourceLocation(MonkeMadness.MOD_ID, "rhesus_macaque").toString()));
 
 
 }

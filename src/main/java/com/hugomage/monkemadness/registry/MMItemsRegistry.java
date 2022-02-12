@@ -56,6 +56,7 @@ public class MMItemsRegistry {
     public static final RegistryObject<ForgeSpawnEggItem> LEMUR_SPAWN_EGG = ITEMS.register("ringtailed_lemur_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.LEMUR, 0xe3e6ed, 0x323c48, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> BUSH_BABY_SPAWN_EGG = ITEMS.register("bush_baby_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.BUSHBABY, 0x917561, 0xfcc4a9, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<ForgeSpawnEggItem> UAKARI_SPAWN_EGG = ITEMS.register("uakari_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.UAKARI, 0xa42c28, 0x7a4012, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<ForgeSpawnEggItem> RHESUS_SPAWN_EGG = ITEMS.register("rhesus_macaque_spawn_egg",() -> new ForgeSpawnEggItem(MMEntitysRegistry.RHESUS, 0xc59061, 0xd88a79, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
     //Holdables
     public static final RegistryObject<Item> PAN_FLUTE = ITEMS.register("pan_flute", PanFlute::new);

@@ -73,6 +73,7 @@ public class MonkeMadness
         SpawnPlacements.register(MMEntitysRegistry.LEMUR.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
         SpawnPlacements.register(MMEntitysRegistry.BUSHBABY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
         SpawnPlacements.register(MMEntitysRegistry.UAKARI.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        SpawnPlacements.register(MMEntitysRegistry.RHESUS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
     }
     @SubscribeEvent
     public void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers  event) {
@@ -96,6 +97,7 @@ public class MonkeMadness
         event.registerEntityRenderer(MMEntitysRegistry.LEMUR.get(), LemurRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.BUSHBABY.get(), BushBabyRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.UAKARI.get(), UakariRenderer::new);
+        event.registerEntityRenderer(MMEntitysRegistry.RHESUS.get(), RhesusRenderer::new);
         event.registerEntityRenderer(MMEntitysRegistry.POOP.get(), ThrownItemRenderer::new);
     }
     public void registerLayerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
@@ -119,6 +121,7 @@ public class MonkeMadness
         event.registerLayerDefinition(HowlerMonkeyModel.LAYER_LOCATION, HowlerMonkeyModel::createBodyLayer);
         event.registerLayerDefinition(LemurModel.LAYER_LOCATION, LemurModel::createBodyLayer);
         event.registerLayerDefinition(UakariModel.LAYER_LOCATION, UakariModel::createBodyLayer);
+        event.registerLayerDefinition(RhesusModel.LAYER_LOCATION, RhesusModel::createBodyLayer);
     }
     private void setup(final EntityAttributeCreationEvent event)
     {
@@ -142,6 +145,7 @@ public class MonkeMadness
         event.put(MMEntitysRegistry.LEMUR.get(), Lemur.setCustomAttributes().build());
         event.put(MMEntitysRegistry.BUSHBABY.get(), BushBaby.setCustomAttributes().build());
         event.put(MMEntitysRegistry.UAKARI.get(), Uakari.setCustomAttributes().build());
+        event.put(MMEntitysRegistry.RHESUS.get(), Rhesus.setCustomAttributes().build());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

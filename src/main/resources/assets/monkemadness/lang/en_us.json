@@ -54,6 +54,8 @@
   "item.monkemadness.ringtailed_lemur_spawn_egg": "RingTailed Lemur Spawn Egg",
   "entity.monkemadness.uakari": "Uakari",
   "item.monkemadness.uakari_spawn_egg": "Uakari Spawn Egg",
+  "entity.monkemadness.rhesus_macaque": "Rhesus Macaque",
+  "item.monkemadness.rhesus_macaque_spawn_egg": "Rhesus Macaque Spawn Egg",
   "advancements.monkemadness.gigantopithecus.title": "Don't mess with the king",
   "advancements.monkemadness.gigantopithecus.desc": "Punch a Gigantopithecus"
 }
